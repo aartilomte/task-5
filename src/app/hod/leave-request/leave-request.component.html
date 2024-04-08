@@ -1,0 +1,72 @@
+<div class="container">
+    <div class="row">
+        <div class="col-4 mt-5 mb-4 " *ngFor="let sm of deatils">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h6 class="card-subtitle mb-2 text-muted">{{sm.name}}</h6>
+                  <p class="card-text">From:- {{sm.start | date}}</p>
+                  <p  class="card-text">To:- {{sm.end | date}}</p>
+                  <p  class="card-text">Reson:- {{sm.reson }}</p>
+                  <form class="form-inline">
+                    <button type="submit" class="btn btn-success mb-2 btn-sm mr-3" (click)="onClick(sm.id)" *ngIf="sm.status !== 'approved' && sm.status !== 'rejected'">Approve</button>
+
+                    <button type="submit" class="btn btn-danger mb-2 btn-sm mr-3" (click)="onClickOne(sm.id)" *ngIf="sm.status !== 'approved' && sm.status !== 'rejected'">reject</button>
+                    <span *ngIf="sm.status === 'approved'" class="text-success"><i class="fa fa-solid fa-check">Approved</i></span>
+                    <span *ngIf="sm.status === 'rejected'" class="text-danger"><i class="fa fa-solid fa-check">Rejected</i></span>
+                  </form>
+                
+                 
+
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+
+
+<!--  
+<div class="container">
+  <div class="row">
+      <div class="col-4 mt-5 mb-4 " *ngFor="let sm of sortedData">
+          <div class="card" style="width: 18rem;" *ngIf="approved">
+              <div class="card-body">
+                <h6 class="card-subtitle mb-2 text-muted">{{sm.name}}</h6>
+                <p class="card-text">From:- {{sm.start | date}}</p>
+                <p  class="card-text">To:- {{sm.end | date}}</p>
+                <p  class="card-text">Reson:- {{sm.reson }}</p>
+                <form class="form-inline">
+                  <button class="btn bnt-sm text-success">Approve</button>
+                  
+                </form>
+
+
+              </div>
+            </div>
+      </div>
+
+
+      <div class="col-4 mt-5 mb-4 " *ngFor="let sm of sortedDataone">
+        <div class="card" style="width: 18rem;" *ngIf="approved">
+            <div class="card-body">
+              <h6 class="card-subtitle mb-2 text-muted">{{sm.name}}</h6>
+              <p class="card-text">From:- {{sm.start | date}}</p>
+              <p  class="card-text">To:- {{sm.end | date}}</p>
+              <p  class="card-text">Reson:- {{sm.reson }}</p>
+              <form class="form-inline">
+                <button class="btn bnt-sm text-danger">Reject</button>
+              </form>
+            </div>
+          </div>
+    </div>
+
+    
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+
+  
+     
+  </div>
+</div>  -->

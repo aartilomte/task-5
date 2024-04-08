@@ -1,0 +1,39 @@
+<div class="a">
+  <div class="container">
+   <div class="row">
+    <div class="col-6 b mt-5">
+      <form [formGroup]="mySignForms" (submit)="onSign(input1.value, input2.value)">
+        <!-- <div class="form-group">
+          <label for="">User Name</label>
+          <input type="email" class="form-control" formControlName="username" id="userN"  #input1>
+        </div> -->
+  
+        <mat-form-field class="example-full-width a">
+          <mat-label>User Name</mat-label>
+          <input matInput #message maxlength="256" placeholder="password" formControlName="username" #input1>
+        </mat-form-field><br>
+  
+        <!-- <div class="form-group">
+          <label for="userPassword">Password</label>
+          <input  type="text" class="form-control" formControlName="password" id="userPassword" #input2>
+        </div> -->
+  
+        <mat-form-field class="example-full-width a">
+          <mat-label>Password</mat-label>
+          <input matInput #message maxlength="256" placeholder="password" formControlName="password" #input2>
+        </mat-form-field>
+      
+        <!-- <button type="submit" class="btn btn-primary btn-sm btn-block">Login</button> -->
+        <button mat-flat-button color="primary" class="btn btn-primary btn-sm btn-block">Login</button>
+  
+       
+        
+      </form>
+      <button  class="btn text-info " routerLink="/resister" >Resister</button> 
+    </div>
+   </div> 
+  
+  </div>
+</div>
+
+

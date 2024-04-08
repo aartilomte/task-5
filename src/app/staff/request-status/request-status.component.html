@@ -1,0 +1,54 @@
+  <div class="container">
+    <div class="row"> 
+            <a class="bg-accent ml-auto log text-danger"routerLink="/signIN"><i class="fa-solid fa-gear text-danger"></i> Logout</a>
+    </div>
+  </div>
+  <div class="container mt-2">
+    <div class="row"  >
+        <div class="col-12">
+            <div class="form-inline abcd">
+                <h1 class="mr-5 pr-5" >20</h1>
+                <h1 class="mr-5 pr-5" *ngIf="user">{{approvedCount}}</h1>
+                <h1 class="mr-5 pr-5" *ngIf="user">{{rejectedCount}}</h1>
+            </div>
+        <div class="col-12" >
+            <div class="form-inline">
+                <p class="mr-5 ">Total Leaves</p>
+                <p class="mr-5 ">Approved</p>
+                <p class="mr-5 ">Rejected</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+ <div class="container">
+    <div class="row" *ngIf="user">
+        <div class="col-4 mt-5 mb-4 " *ngFor="let tm of user">
+            <div class="card" style="width: 18rem;" >
+                <div class="card-body">
+                  <p class="card-text">From:- {{tm.start | date: 'dd/MM/yyyy'}}</p>
+                  <p  class="card-text">To:- {{tm.end | date: 'dd/MM/yyyy'}}</p>
+                  <p  class="card-text">No of days :- {{(+days.start) - (+days.end ) }} </p>
+                  <p  class="card-text">Reson:- {{tm.reson }}</p>
+                  <form class="form-inline">
+                   <h5>{{tm.status}}</h5>
+                  </form>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+
+  <div *ngIf="!user.length" class="mt-5 mb-5 text-center">
+    <h1>No leave applay yet.</h1>
+  </div>
+
+<div class="mb-5">
+<button class="  btn btn-primary btn-sm" routerLink="/leave-details">+Apply leave</button>
+</div>
+
+      
+      
+
+     

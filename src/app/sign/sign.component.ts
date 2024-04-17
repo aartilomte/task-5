@@ -27,8 +27,6 @@ export class SignComponent implements OnInit{
 
     // this.getData()
     this.userServe.getData()
-
-
   }
  
   onSign(value1: string, value2: string){
@@ -40,19 +38,13 @@ export class SignComponent implements OnInit{
   console.log(resisterdUser)
   let person = this.userServe.users.find((u) => u.username === username && u.password === password);
 
-  // const staff = this.loginhttp.onSign(firstName)
-  const staff = this.loginhttp.onSignIn(username);
-
-  let staffUniq = this.userServe.leaveData.find((u) => u.firstName === username)
+  // const staff = this.loginhttp.onSignIn(username);
+  // let staffUniq = this.userServe.leaveData.find((u) => u.firstName === username)
 
 console.log(person)
 console.log(this.userServe.users)
-if(resisterdUser.user === 'HOD'){
+if(resisterdUser.role === 'option2'){
   this.router.navigate(['/leave-request'])
-  // const dialogRef = this.dialog.open(DialogComponent, {
-  //   width: '250px',
-  //   data: { message: 'Login successful!' }
-  // });
   
 } else if(person.username == person.firstName){
   const name = person.firstName
@@ -60,9 +52,7 @@ if(resisterdUser.user === 'HOD'){
   this.loginhttp.sendId(name)
   this.router.navigate(['/request-status'])
 }
-
   }
- 
     }
   
 

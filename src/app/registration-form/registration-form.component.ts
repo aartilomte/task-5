@@ -29,7 +29,8 @@ username = ['HoD' , 'Staff'];
       dept : this.fb.control(''),
       username : this.fb.control(''),
       password : this.fb.control(''),
-      user : this.fb.control('')
+      user : this.fb.control(''),
+      role : this.fb.control('')
     })
     this.myResisterFormHod = this.fb.group({
       firstName : this.fb.control(''),
@@ -39,7 +40,8 @@ username = ['HoD' , 'Staff'];
       dept : this.fb.control(''),
       username : this.fb.control(''),
       password : this.fb.control(''),
-      user : this.fb.control('')
+      user : this.fb.control(''),
+      role : this.fb.control('')
 
     })
       
@@ -54,10 +56,15 @@ username = ['HoD' , 'Staff'];
     // if(this.user.staffusername.value === 'staff'){
     //     this.router.navigate(['/leave-request'])
     //   }
+
+        this.router.navigate(['/signIN'])
+
     }
     onSubHod(){
       console.log(this.myResisterFormHod.value)
       this.http.postData(this.myResisterFormHod.value)
+    this
+
   }
 
   onSelectChange(e: any) {
